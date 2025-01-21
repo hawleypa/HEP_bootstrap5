@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title></title>
+	<style>
+.dropdown-item {
+  font-family: 'Montserrat', serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.429;
+    padding-top: 0.5rem;
+}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-light fixed-top navbar-expand-md bg-light" >
+<a class="navbar-brand" href="./index.php">Hollis Equestrian Park</a><button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+	<li class="nav-item "><a class="nav-link" href="./index.php">Home<span class="sr-only">(current)</span></a></li>
+	<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="./AboutThePark.php" id="parkDropdown" role="button">About The Park </a>
+	<div aria-labelledby="parkDropdown" class="dropdown-menu">
+	<a class="dropdown-item" href="./AboutThePark.php#Facility" onclick="activateTab('#Facility');">Facility</a>
+	<a class="dropdown-item" href="./AboutThePark.php#Directions" onclick="activateTab('#Directions');">Directions</a>
+	<a class="dropdown-item" href="./AboutThePark.php#Trails" onclick="activateTab('#Trails');">Trails</a>
+	</div>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="./Calendar.php">Calendar</a></li>
+	<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="./Contact.php" id="contactDropdown" role="button">Contact</a>
+	<div aria-labelledby="contactDropdown" class="dropdown-menu">
+	<a class="dropdown-item" href="./Contact.php#Membership" onclick="activateTab('#Membership');">Membership</a>
+	<a class="dropdown-item" href="./Contact.php#BookThePark" onclick="activateTab('#BookThePark');">Book The Park</a>
+	<a class="dropdown-item" href="./Contact.php#SponsorThePark" onclick="activateTab('#SponsorThePark');">Sponsor The Park</a>
+	</div>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="./Gallery.php">Gallery</a></li>
+	<!--/.nav-collapse --><!--/.container-fluid -->
+</ul>
+</div>
+</nav>
+<br>
+</body>
+</html>

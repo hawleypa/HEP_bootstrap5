@@ -1,0 +1,44 @@
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+function activateTab(hash)
+{
+  if ( hash != '' ){
+    var arg1 = '#nav-tab a[href="' ;
+    var arg3 = '"]' ;
+    var total = arg1.concat(hash, arg3);
+    console.log(total);
+    $(total).tab('show')
+       }
+       else {
+         $(this).removeClass('active');
+       }
+  return 1;
+};
+  var path = window.location.pathname;
+  var res = path .split("/");
+  var page =  res[res.length-1];
+  //grabs the hash tag from the url
+  var hash = window.location.hash;
+  var done = activateTab(hash);
+  $(document).ready(function(){
+    var current = location.pathname;
+    $('#navbarSupportedContent li a').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+            $this.addClass('active');
+        }
+    })
+})
+</script>
+
+  
