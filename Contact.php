@@ -16,7 +16,7 @@
 
   <body style="padding:50px;">
 
-    <div class="container">
+    <li class="container">
 
       <!-- Fixed navbar -->
       <?php
@@ -38,16 +38,20 @@
   </div>
       
     <div class="container">     
-      <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-Membership-tab" data-toggle="tab" href="#Membership" role="tab" aria-controls="nav-Membership" aria-selected="true">Membership</a>
-          <a class="nav-item nav-link" id="nav-BookThePark-tab" data-toggle="tab" href="#BookThePark" role="tab" aria-controls="nav-BookThePark" aria-selected="false">Book The Park</a>
-          <a class="nav-item nav-link" id="nav-SponsorThePark-tab" data-toggle="tab" href="#SponsorThePark" role="tab" aria-controls="nav-SponsorThePark" aria-selected="false">Sponsor The Park</a>
-        </div>
-      </nav>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="nav-Membership-tab" data-bs-toggle="tab" data-bs-target="#Membership" type="button" role="tab" aria-controls="nav-Membership" aria-selected="true">Membership</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="nav-BookThePark-tab" data-bs-toggle="tab" data-bs-target="#BookThePark" type="button" role="tab" aria-controls="nav-BookThePark" aria-selected="false">Book The Park</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="nav-SponsorThePark-tab" data-bs-toggle="tab" data-bs-target="#SponsorThePark" type="button" role="tab" aria-controls="nav-SponsorThePark" aria-selected="false">Sponsor The Park</button>
+    </li>
+    </ul>
       
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="Membership" role="tabpanel" aria-labelledby="nav-Membership-tab">
+      <div class="tab-pane fade show active" id="Membership" role="tabpanel" aria-labelledby="nav-Membership-tab" tabindex="0">
     <br>
 <p>If you have questions regarding your membership, please contact Pat at <a href="mailto:hollisequestrian@gmail.com">hollisequestrian@gmail.com</a></p>
 <p><em>Everyone wishing to use the park on non-booked days must be a member. Members may no longer bring a guest to use the park.</em></p>
@@ -78,18 +82,18 @@ Please let us know your name and the names of active family members, your mailin
 Members of the Hollis Equestrian Park can now use the Park on any non-event day for schooling their horses. Members will receive the combination to the gate lock and can now enter the Park whenever it is convenient. We hope this arrangement will mean that more people can enjoy the Park throughout the season. After all, we didn't do all this work so it could just sit there and look pretty - we want people riding in it!
 </p>
     </div>
-    <div class="tab-pane fade" id="BookThePark" role="tabpanel" aria-labelledby="nav-BookThePark-tab">
+    <div class="tab-pane fade" id="BookThePark" role="tabpanel" aria-labelledby="nav-BookThePark-tab" tabindex="0">
     <br>
     <p>The Hollis Equestrian Park may be rented by the day for a fee of $200.00 per day.  (Note: There is an additional optional fee for mowing the outside course. See the contract for more information.)</p>
     <p>To download a booking contract, click <a href="./pdf/HollisEquestrianParkContract2025.pdf">here</a></p>
     <p>To inquire about available dates and to reserve a date, contact us at  <a href="mailto:hollisequestrain@gmail.com">hollisequestrian@gmail.com</a></p>
     </div>
-    <div class="tab-pane fade" id="SponsorThePark" role="tabpanel" aria-labelledby="nav-SponsorThePark-tab">
+    <div class="tab-pane fade" id="SponsorThePark" role="tabpanel" aria-labelledby="nav-SponsorThePark-tab" tabindex="0">
     <br>
     <div class="text-center">
     <p><strong>Join Our 2023 Sponsors:</strong></p>
     <ul style="list-style-type:none">
-    <li ><a href="https://www.andysagway.com/">Andy's Agway </a></li><br>
+    <li ><a href="https://www.AndysFarmAndGarden.com/">Andy's Farm & Garden </a></li><br>
     <li ><a href="https://www.futuresforstandardbreds.org/">Futures For Standardbreds</a></li><br>
     <li><a href="https://www.longhorn.me/">Long Horn Horse And Pet Supply </a></li><br>
     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Address: 636 US-1, Scarborough, ME 04074 

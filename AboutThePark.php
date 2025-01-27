@@ -51,32 +51,46 @@
     Available for members or for hosting shows.</h2>      
   </div>     
   </div>
-
-      <div class="container">
+<div>
+<p class="d-inline-flex gap-1">
+  <button class="btn btn-block" type="button" onclick="getWeatherData()" data-bs-toggle="collapse" data-bs-target="#weather-data" aria-expanded="false" aria-controls="weather-data">Current Weather Conditions</button>
+  <button class="btn btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#map" aria-expanded="false" aria-controls="map">Google Map</button>
+  <button class="btn btn-block" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="weather-data map">Toggle both elements</button>
+</p>
 <div class="row">
-<div class="col-lg-6 col-md-6 col-sm-6" >
-<a href="https://mobile.weather.gov/index.php?lat=43.567036&lon=-70.627118&unit=0&amp;lg=english" class="btn btn-block" role="button" data-toggle="collapse" data-target="#weather" target="myFrame" style="background-color:Gainsboro;">Current Weather Conditions</a>
-  <div id="weather" class="collapse" width="100%">
-    <iframe name="myFrame" src='https://mobile.weather.gov/index.php?lat=43.567036&lon=-70.627118&unit=0&amp;lg=english' style="width: 100%; height: 450px; border:0"  allowfullscreen="true"></iframe>
-  </div>
-</div>
-<div class="col-lg-6  col-md-6 col-sm-6">
-<button type="button" class="btn  btn-block" data-toggle="collapse" data-target="#map" style="background-color:Gainsboro;">Google Map</button>
-<div id="map" class="collapse">      
-<iframe name="map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=43.567036%2C%20-70.627118&key=AIzaSyCqGOWa7v_VPgzUffrEYweTyj8zjAX1udA" allowfullscreen></iframe> 
-</div>
-</div>
-<br><br>
-</div>     
-    <nav>
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-facility-tab" data-toggle="tab" href="#Facility" role="tab" aria-controls="Facility" aria-selected="true">Facility</a>
-        <a class="nav-item nav-link" id="nav-directions-tab" data-toggle="tab" href="#Directions" role="tab" aria-controls="Directions" aria-selected="false">Directions</a>
-        <a class="nav-item nav-link" id="nav-trails-tab" data-toggle="tab" href="#Trails" role="tab" aria-controls="Trails" aria-selected="false">Trails</a>
+  <div class="col">
+    <div class="collapse multi-collapse" id="weather-data">
+      <div class="card card-body">
+        <div id="weather-output"></div>
       </div>
-    </nav>    
-    <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="Facility" role="tabpanel" aria-labelledby="nav-facility-tab">
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="map">
+      <div class="card card-body">
+      <iframe name="map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=43.567036%2C%20-70.627118&key=AIzaSyCqGOWa7v_VPgzUffrEYweTyj8zjAX1udA" allowfullscreen></iframe> 
+      </div>
+    </div>
+  </div>
+</div> 
+</div>
+
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+  
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="nav-facility-tab" data-bs-toggle="tab" data-bs-target="#Facility" type="button" role="tab"  aria-controls="Facility" aria-selected="true">Facility</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="nav-directions-tab" data-bs-toggle="tab" data-bs-target="#Directions" type="button" role="tab" aria-controls="Directions" aria-selected="false">Directions</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="nav-trails-tab" data-bs-toggle="tab" data-bs-target="#Trails" type="button" role="tab" aria-controls="Trails" aria-selected="false">Trails</button>
+        </li>
+ 
+    </ul>   
+    <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="Facility" role="tabpanel" aria-labelledby="nav-facility-tab" tabindex="0">
     <div>
     <br>
     <p>The Hollis Equestrian Park is a volunteer-maintained equestrian riding park available for private membership or show venue in Hollis, Maine</p>
@@ -95,7 +109,7 @@
     <p>To inquire about available dates and to reserve a date please see the Book The Park tab on the Contacts page.</p>
     </div>
     </div>
-    <div class="tab-pane fade" id="Directions" role="tabpanel" aria-labelledby="nav-directions-tab">
+    <div class="tab-pane fade" id="Directions" role="tabpanel" aria-labelledby="nav-directions-tab" tabindex="0">
 <br><p>The Hollis Equestrian Park is located on (Route 5) 123 New County Road in Hollis, Maine; use 155 New County Road for GPS.
 <a href="#map" data-toggle="collapse">Click here for Google map</a></p>
 <p><strong>From the South via the Maine Turnpike:</strong>
@@ -119,7 +133,7 @@ Turn right, heading South, on Route 5 in East Waterboro. Continue right on Route
 <p><strong>From Route 5 (Saco area):</strong>
 Drive North on Route 5 through Dayton. Park will be on your left approx. 2.5 miles North of the Route 35 intersection. </p>
     </div>
-    <div class="tab-pane fade" id="Trails" role="tabpanel" aria-labelledby="nav-trails-tab">
+    <div class="tab-pane fade" id="Trails" role="tabpanel" aria-labelledby="nav-trails-tab" tabindex="0">
     <br>
 <p>Click <a href="./pdf/trailmap0823.pdf">here</a> to download a PDF map of the trails.</p>
 <p>The Hollis Equestrian Park is located near the Massabesic Experimental Forest, which is land owned by the U.S. Forest Service and is open to recreation by the public. Please keep in mind that we only provide a place for parking and unloading horses and do not maintain the trails and are not responsible for trail conditions. RIDE RESPONSIBLY AND AT YOUR OWN RISK.</p>
@@ -174,9 +188,81 @@ Here are a few things that I have found handy to have on the trail - even on a s
       include 'footer-row.html';
     ?>
 
+<script>
+
+const myCollapseEl = document.querySelector('#weather-data')
+
+function getWeatherData() {
+  
+  // Define the API URL
+  const apiKey = '5d90bd63ab79ec3385e819cb4ee90f91';
+  const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=43.567&lon=-70.627&appid=5d90bd63ab79ec3385e819cb4ee90f91&units=imperial';
+  let outputElement = document.getElementById('weather-output');
+
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        console.log(response);
+        if (response.status === 404) {
+          throw new Error('Data not found');
+        } else if (response.status === 500) {
+          throw new Error('Server error');
+        } else {
+          throw new Error('OpenWeatherMap response was not ok');
+        }
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('data:', data);
+      const temperature = data.main.temp;
+      const feels_like = data.main.feels_like;
+      const humidity = data.main.humidity;
+      const description = data.weather[0].description;
+      const location = data.name;
+      const visibility = data.visibility; // meters, 10 km max
+      const wind_speed = data.wind.speed;  // mph
+      // 0 degrees indicates a north wind, 90 degrees is east, 180 degrees is south, and 270 degrees is west
+      const wind_direction = data.wind.deg;
+      const wind_gust = data.wind.gust;  // mph
+      const sunrise = data.sys.sunrise;    // time UTC
+      const sunset = data.sys.sunset;   //    time UTC
+      const percent_cloudy = data.clouds.all;
+      //const rainfall_rate = data.rain.1h;  // mm/hour
+      const time_of_data = data.dt;  // UTC
+      const timeStamp = new Date(time_of_data);
+      //outputElement.innerHTML = '<p>Temperature in ${location}: ${temperature}°F</p>\n
+      //                           <p>Feels like ${feels_like}°F</p>\n
+       //                          <p>${humidity} % humidity</p>\n
+      //                           <p>Wind direction: ${wind_direction} degrees from North</p>\n
+                          //       <p>Wind speed: ${wind_speed} mph</p>\n
+                        //         <p>Wind gust: ${wind_gust} mph</p>\n
+                      //           <p>Cloudy: ${percent_cloudy} %</p>\n
+                    //             <p>${wind_gust} mph</p>\n
+                  //               <p>Visibility ${visibility} in meters</p>\n
+                //                 <p>Sunrise: ${sunrise} UTC</p>\n
+              //                   <p>Sunset: ${sunset} UTC</p>\n
+            //                     <p>Rain Fall Rate: ${rainfall_rate} mm/hour</p>\n
+          //                       <p>Data Time Stamp ${timeStamp}</p>\n
+        //                         <p>Weather: ${description}</p>';
+      outputElement.innerHTML = '<p>Weather: ' + description +'</p>';
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+};
+
+myCollapseEl.addEventListener('show.bs.collapse', event => {
+  // Action to execute once the collapsible area is expanded
+  console.log('expanded');
+  getWeatherData();
+})
+
+</script>
+
     <?php 
       include 'scripts-body.html';
     ?>  
-   
+
   </body>
 </html>
