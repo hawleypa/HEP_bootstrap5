@@ -220,32 +220,24 @@ function getWeatherData() {
       const humidity = data.main.humidity;
       const description = data.weather[0].description;
       const location = data.name;
-      const visibility = data.visibility; // meters, 10 km max
+      const visibility = data.visibility/1609.34; // meters, 10 km max
       const wind_speed = data.wind.speed;  // mph
       // 0 degrees indicates a north wind, 90 degrees is east, 180 degrees is south, and 270 degrees is west
+  // 45 degrees is a north east wind, 135 is a south east wind, 225 is a south west wind, and 315 is a north west wind
       const wind_direction = data.wind.deg;
       const wind_gust = data.wind.gust;  // mph
-      const sunrise = data.sys.sunrise;    // time UTC
-      const sunset = data.sys.sunset;   //    time UTC
+      const sunrise = new Date(data.sys.sunrise*1000);    // time UTC
+      const sunset = new Date(data.sys.sunset*1000);   //    time UTC
       const percent_cloudy = data.clouds.all;
       //const rainfall_rate = data.rain.1h;  // mm/hour
       const time_of_data = data.dt;  // UTC
-      const timeStamp = new Date(time_of_data);
-      //outputElement.innerHTML = '<p>Temperature in ${location}: ${temperature}°F</p>\n
-      //                           <p>Feels like ${feels_like}°F</p>\n
-       //                          <p>${humidity} % humidity</p>\n
-      //                           <p>Wind direction: ${wind_direction} degrees from North</p>\n
-                          //       <p>Wind speed: ${wind_speed} mph</p>\n
-                        //         <p>Wind gust: ${wind_gust} mph</p>\n
-                      //           <p>Cloudy: ${percent_cloudy} %</p>\n
-                    //             <p>${wind_gust} mph</p>\n
-                  //               <p>Visibility ${visibility} in meters</p>\n
-                //                 <p>Sunrise: ${sunrise} UTC</p>\n
-              //                   <p>Sunset: ${sunset} UTC</p>\n
-            //                     <p>Rain Fall Rate: ${rainfall_rate} mm/hour</p>\n
-          //                       <p>Data Time Stamp ${timeStamp}</p>\n
-        //                         <p>Weather: ${description}</p>';
-      outputElement.innerHTML = '<p>Weather: ' + description +'</p>';
+      const timeStamp = new Date(time_of_data*1000);
+      const wind_directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+      const index = Math.round((wind_direction % 360) / 22.5);
+      let temp = '<p>Weather: ' + description +'</p><p>Date & Time: ' + timeStamp.toLocaleString() + '</p><p>Percent cloudy: ' + percent_cloudy + ' %</p><p>Temperature: ' + temperature +' °F</p><p>Feels like:  ' + feels_like +' °F</p>';
+      let temp2 = '<p> '+ humidity + ' % humidity</p><p>  Wind speed ' + wind_speed + ' mph</p><p>Wind direction '+ wind_directions[index]+' </p><p> Gusting '+wind_gust+' mph</p>';  
+      let temp3 = '<p> Visibility: ' + visibility.toFixed(2) + ' miles </p><p>Sunrise: ' + sunrise.toLocaleString() + '</p><p> Sunset: ' + sunset.toLocaleString() + '</p>';
+      outputElement.innerHTML = temp + temp2 + temp3;  
     })
     .catch(error => {
       console.error('Error:', error);
