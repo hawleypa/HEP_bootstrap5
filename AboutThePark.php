@@ -52,23 +52,24 @@
   </div>     
   </div>
 <div>
-<p class="d-inline-flex gap-1">
-  <button class="btn btn-block" type="button" onclick="getWeatherData()" data-bs-toggle="collapse" data-bs-target="#weather-data" aria-expanded="false" aria-controls="weather-data">Current Weather Conditions</button>
-  <button class="btn btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#map" aria-expanded="false" aria-controls="map">Google Map</button>
-  <button class="btn btn-block" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="weather-data map">Toggle both elements</button>
-</p>
-<div class="row">
+<!--<p class="d-inline-flex gap-1">
+  <button class="btn btn-block w-100" type="button" data-bs-toggle="collapse" data-bs-target="#weather-data" aria-expanded="false" aria-controls="weather-data">Current Weather Conditions</button>
+  <button class="btn btn-block w-100" type="button" data-bs-toggle="collapse" data-bs-target="#map" aria-expanded="false" aria-controls="map">Google Map</button>
+</p>-->
+<div class="row row-cols-1 row-cols-md-2 my-3">
   <div class="col">
-    <div class="collapse multi-collapse" id="weather-data">
+  <button class="btn btn-primary btn-block w-100" type="button" data-bs-toggle="collapse" data-bs-target="#weather-data" aria-expanded="false" aria-controls="weather-data">Current Weather Conditions</button>
+    <div class="collapse h-100" id="weather-data" >
       <div class="card card-body">
-        <div id="weather-output"></div>
+        <div id="weather-output" style="height:450px;"></div>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="collapse multi-collapse" id="map">
+  <button class="btn btn-primary btn-block w-100" type="button" data-bs-toggle="collapse" data-bs-target="#map" aria-expanded="false" aria-controls="map">Google Map</button>
+    <div class="collapse h-100" id="map" >
       <div class="card card-body">
-      <iframe name="map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=43.567036%2C%20-70.627118&key=AIzaSyCqGOWa7v_VPgzUffrEYweTyj8zjAX1udA" allowfullscreen></iframe> 
+      <iframe name="map" height="450" src="https://www.google.com/maps/embed/v1/place?q=43.567036%2C%20-70.627118&key=AIzaSyCqGOWa7v_VPgzUffrEYweTyj8zjAX1udA" allowfullscreen></iframe> 
       </div>
     </div>
   </div>
